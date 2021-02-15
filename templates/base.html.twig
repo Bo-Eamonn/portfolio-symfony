@@ -1,19 +1,53 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {# Run `composer require symfony/webpack-encore-bundle`
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
-        {% block stylesheets %}
-            {#{{ encore_entry_link_tags('app') }}#}
-        {% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+              integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+              crossorigin="anonymous">
+        <link rel="stylesheet" href="https://portfolio.inceacraft.nl/stylesheet.css">
+    {% endblock %}
+</head>
+<body>
+<div class="container-fluid">
+    <header>
+        <a href="../school">School Stuff</a>
+        <a href="../">Home Stuff</a>
+        <a href="../experience">experience Stuff</a>
+        <a href="../hobby">hobby's Stuff</a>
+        <a href="../projects">projects Stuff</a>
+        <a href="../skills">skills Stuff</a>
+        {% if is_granted('ROLE_USER') %}
+            <p class="">
+                <button class="btn btn-txt"><a href="/logout">Uitloggen</a>
+                </button>
+            </p>
+        {% else %}
+            <p class="">
+                <button class="btn btn-txt"><a " href="/login">Inloggen</a>
+                </button>
+            </p>
+        {% endif %}
+    </header>
 
-        {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+</div>
+{% block body %}
+{% endblock %}
+</body>
+<footer class="fixed-bottom">
+    {% block footer %}
+    {% endblock %}
+{#CopyRight#}
+    <div class="text-center p-3">
+        © 2021 - {{ 'now' | date('Y') }} Copyright:
+        <a class="text-dark" href="/">Bo-Eamonn de Snoo</a>
+    </div>
+</footer>
+{% block javascripts %}{% endblock %}
+</div>
+</body>
 </html>
