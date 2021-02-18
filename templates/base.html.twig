@@ -13,8 +13,8 @@
 </head>
 <body>
 {% if is_granted('ROLE_ADMIN') %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-secondary bg-secondary">
+    <a class="navbar-brand" href="/"><img class="logo" src="../../images/logo.jpg" alt="logo"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -22,20 +22,36 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link text-dark font-weight-bold" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
+                <a class="nav-link dropdown-toggle text-dark font-weight-bold" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    School
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="/school">Index</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="/school/new">New</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-dark font-weight-bold" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Ervaring
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/experience">Index</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/experience/new">New</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-dark font-weight-bold" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Skills
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/skills">Index</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/skills/new">New</a>
                 </div>
             </li>
         </ul>
@@ -52,16 +68,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link text-dark font-weight-bold" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/school">School</a>
+                <a class="nav-link text-dark font-weight-bold" href="/school">School</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="/experience">Ervaring</a>
+                <a class="nav-link text-dark font-weight-bold" href="/experience">Ervaring</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="/skills">Skills</a>
+                <a class="nav-link text-dark font-weight-bold" href="/skills">Skills</a>
             </li>
         </ul>
         <a href="/login" class="btn btn-outline-success my-2 my-sm-0">Inloggen</a>
